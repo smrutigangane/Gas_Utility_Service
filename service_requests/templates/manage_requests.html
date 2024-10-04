@@ -1,0 +1,20 @@
+<!-- manage_requests.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Service Requests</title>
+</head>
+<body>
+    <h1>Manage Service Requests</h1>
+    <ul>
+        {% for request in service_requests %}
+            <li>
+                Request ID: {{ request.id }} - Status: {{ request.status }}
+                <a href="{% url 'update_request_status' request.id %}">Update Status</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

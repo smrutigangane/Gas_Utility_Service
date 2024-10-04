@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Service Request</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #34495e;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #2c3e50;
+        }
+
+        p strong {
+            color: #34495e;
+        }
+
+        a {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+        }
+
+        a:active {
+            background-color: #1c6b9a;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+
+            a {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Track Your Service Request</h1>
+
+        <h2>Service Request ID: {{ request_details.id }}</h2>
+        <p><strong>Service Type:</strong> {{ request_details.service_type }}</p>
+        <p><strong>Description:</strong> {{ request_details.description }}</p>
+        <p><strong>Status:</strong> {{ request_details.status }}</p>
+        <p><strong>Submitted On:</strong> {{ request_details.created_at }}</p>
+        <p><strong>Resolved At:</strong> {{ request_details.resolved_at|default:"Pending" }}</p>
+
+        <a href="{% url 'my_requests' %}">Back to My Requests</a>
+    </div>
+</body>
+</html>

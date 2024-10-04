@@ -1,0 +1,38 @@
+Basic requirements for CLoud Computing:
+
+1. Computer Networking
+2. Routing
+3. IP Address
+4. VPN
+
+5. Operating Systems
+6. Linux OS
+
+7. Virtualisation
+8. VM Machines
+9. Host
+10. Hypervisor
+
+11. AWS free tier pe acc banao, Amazon EC@ use krke apna ek khud ka vm create krke dkeho
+
+12. Databases
+13. SQL
+14. NOSQL
+
+15. Javascript
+16. GoLang
+
+17. Associate level cetrificate to begin with
+18. next we can go with archiutecture level certificate
+
+19, ti start with we can go for cloud engineer
+20. cloud administrator
+21. Cloud architecture etc job roles
+
+22. Containerisations
+23. Docker
+24. Kubernetes
+25. CI/CD Pipeline
+26. AWS Lambda
+27. Azure Functions
+28. Google Cloud Functions

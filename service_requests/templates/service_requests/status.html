@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Request Status</title>
+    <style>
+        /* Base Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #34495e;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #d5dde5;
+        }
+
+        li strong {
+            display: block;
+            color: #34495e;
+            margin-top: 5px;
+        }
+
+        .no-requests {
+            font-size: 16px;
+            color: #e74c3c;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            li {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .no-requests {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Service Requests</h1>
+
+        {% if service_requests %}
+            <ul>
+                {% for request in service_requests %}
+                    <li>
+                        Request ID: {{ request.id }} - Status: {{ request.status }} <br>
+                        <strong>Service Type:</strong> {{ request.service_type }} <br>
+                        <strong>Description:</strong> {{ request.description }} <br>
+                        <strong>Submitted On:</strong> {{ request.created_at }} <br>
+                        <strong>Resolved At:</strong> {{ request.resolved_at|default:"Pending" }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-requests">No service requests found for this customer.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
